@@ -1,0 +1,169 @@
+/* ============== PARTIE RESPONSIVE ================= */
+
+
+
+/* ============== POUR TABLETTE ================= */
+
+@media screen 
+and (max-width: 992px){
+
+    .toggle{
+        display: block;
+        position: relative;
+        align-items: center;
+        display: flex;
+    }
+    
+    .toggle::before{
+        content: 'Menu';
+        margin-right: 15px;
+        color: #fff;
+    }
+    
+    .toggle.active::before{
+        content: 'Close';
+        color: #fff;
+    }
+    
+    .toggle span{
+        position: relative;
+        width: 20px;
+        height: 50px;
+    }
+    
+    .toggle span::before{
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 120%;
+        height: 3px;
+        background: #fff;
+        transition: 0.5s;
+    }
+    
+    .toggle span::after{
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        width: 120%;
+        height: 3px;
+        background: #fff;
+        transition: 0.5s;
+    }
+    
+    .toggle.active span::before{
+        transform: rotate(225deg);
+        top: 24px;
+    }
+    
+    .toggle.toggle.active span::after{
+        transform: rotate(135deg);
+        bottom: 23px;
+    }
+    
+    
+    .listNav{
+        position: absolute;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        width: 100%;
+        left: 0;
+    }
+    
+    
+    .listNav a{
+        position: relative;
+        height: 50px;
+        width: 100%;
+        text-decoration: none;
+        z-index: 100;
+        list-style: none;
+        background: #042331bc;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        transition: 0.5s;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-250px);
+        transition-delay: calc(0.1s *var(--i));
+    }
+    
+    .contenaire-nav.active .listNav a{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    
+    
+    
+    .listNav a:hover{
+        color: #00adff;
+        transition: 0.5s;
+        background: #042331;
+    }
+
+
+    a::after{
+        content: "";
+        position: absolute;
+        background: #fff;
+        height: 3px;
+        width: 0%;
+        left: 0;
+        bottom: 0px;
+        transition: 0.3s;
+        transition-timing-function: cubic-bezier(0.5,1.6,0.5,0.7);
+        transform-origin: center;
+
+    }
+    
+    a:hover:after{
+        width: 0%;
+    }
+
+    .contenu_tout{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .icon{
+        grid-template-columns:  1fr ;
+      }
+
+      
+}
+
+@media screen 
+and (max-width: 767px){
+
+        .msg_bienvenu{
+            grid-template-columns: 1fr;
+        }
+
+        .bouton a{
+            left: 35%;
+          }
+        
+          .contenu_img img{
+            width: 150px;
+          }
+
+          .contenu_tout{
+            grid-template-columns: 1fr;
+          }
+
+          body{
+            overflow-x: hidden;
+          }
+}
+
+
+/* ============== POUR SMARTPHONE ================= */
+
+@media screen 
+and (max-width: 575px){
+
+}
